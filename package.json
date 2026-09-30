@@ -1,0 +1,66 @@
+{
+  "name": "motofull-desktop",
+  "productName": "MotoFull",
+  "version": "1.0.0",
+  "description": "MotoFull servis yönetim paneli — masaüstü uygulaması",
+  "author": "MotoFull",
+  "main": "src/main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "start:local": "cross-env MOTOFULL_PANEL_URL=http://localhost:5173 electron .",
+    "dist:win": "electron-builder --win",
+    "dist:mac": "electron-builder --mac"
+  },
+  "build": {
+    "appId": "com.motofull.desktop",
+    "productName": "MotoFull",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "MotoFull",
+      "artifactName": "MotoFull-Setup.${ext}"
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "universal"
+          ]
+        }
+      ],
+      "icon": "build/icon.png",
+      "category": "public.app-category.business",
+      "identity": null,
+      "artifactName": "MotoFull-mac.${ext}"
+    }
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "electron": "^38.8.6",
+    "electron-builder": "^26.0.0"
+  }
+}

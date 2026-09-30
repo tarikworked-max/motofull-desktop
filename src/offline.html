@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>MotoFull — Bağlantı yok</title>
+<style>
+  html,body{height:100%;margin:0;background:#0b0f17;color:#e2e8f0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+  .wrap{height:100%;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px}
+  h1{font-size:20px;margin:0 0 8px}
+  p{color:#94a3b8;margin:0 0 20px;max-width:420px;line-height:1.5}
+  button{background:#f97316;color:#fff;border:0;border-radius:10px;padding:10px 22px;font-weight:700;font-size:14px;cursor:pointer}
+  small{display:block;margin-top:14px;color:#64748b}
+</style>
+</head>
+<body>
+<div class="wrap"><div>
+  <h1>Sunucuya bağlanılamadı</h1>
+  <p>MotoFull güvenlik gereği yalnızca çevrimiçi çalışır. İnternet bağlantınızı kontrol edin; bağlantı gelince panel otomatik açılır.</p>
+  <button id="retry">Tekrar dene</button>
+  <small id="status"></small>
+</div></div>
+<script>
+  const retry = () => { document.getElementById('status').textContent = 'Bağlanılıyor…'; window.motofullDesktop.retry(); };
+  document.getElementById('retry').addEventListener('click', retry);
+  window.addEventListener('online', retry);
+  setInterval(() => { if (navigator.onLine) retry(); }, 15000);
+</script>
+</body>
+</html>
