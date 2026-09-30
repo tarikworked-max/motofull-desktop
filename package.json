@@ -1,7 +1,7 @@
 {
   "name": "motofull-desktop",
   "productName": "MotoFull",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MotoFull servis yönetim paneli — masaüstü uygulaması",
   "author": "MotoFull",
   "main": "src/main.js",
@@ -37,11 +37,12 @@
     "nsis": {
       "oneClick": false,
       "perMachine": false,
-      "allowToChangeInstallationDirectory": false,
+      "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
       "shortcutName": "MotoFull",
-      "artifactName": "MotoFull-Setup.${ext}"
+      "artifactName": "MotoFull-Setup.${ext}",
+      "include": "build/installer.nsh"
     },
     "mac": {
       "target": [
