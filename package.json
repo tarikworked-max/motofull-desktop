@@ -9,8 +9,8 @@
   "scripts": {
     "start": "electron .",
     "start:local": "cross-env MOTOFULL_PANEL_URL=http://localhost:5173 electron .",
-    "dist:win": "electron-builder --win",
-    "dist:mac": "electron-builder --mac"
+    "dist:win": "electron-builder --win --publish never",
+    "dist:mac": "electron-builder --mac --publish never"
   },
   "build": {
     "appId": "com.motofull.desktop",
