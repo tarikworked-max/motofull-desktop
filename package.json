@@ -1,7 +1,7 @@
 {
   "name": "motofull-desktop",
   "productName": "MotoFull",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "MotoFull servis yönetim paneli — masaüstü uygulaması",
   "author": "MotoFull",
   "main": "src/main.js",
@@ -61,7 +61,7 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
-    "electron": "^38.8.6",
-    "electron-builder": "^26.0.0"
+    "electron": "^42.11.12",
+    "electron-builder": "^26.15.3"
   }
 }
